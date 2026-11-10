@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# draw.io 백업·임시 파일
+*.bkp
+*.dtmp
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# 환경 변수 / 비밀 정보 (절대 올리지 않기)
+.env
+*.env
+**/application-local.yml
+**/google-services.json
+**/GoogleService-Info.plist
+**/firebase-adminsdk*.json
+
+# server (Spring Boot / Gradle)
+server/.gradle/
+server/build/
+server/out/
+
+# app (Flutter)
+app/.dart_tool/
+app/build/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/ios/Pods/
+app/android/.gradle/
+app/android/local.properties

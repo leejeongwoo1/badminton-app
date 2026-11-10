@@ -1,0 +1,206 @@
+<mxfile host="Electron" pages="3">
+  <diagram name="사용자 상태" id="us">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1000" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="us_C" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;fillColor=none;dashed=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;" value="체크인 상태 (체육관 안)" vertex="1">
+          <mxGeometry height="490" width="680" x="260" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="us_init" parent="1" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="95" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="us_OUT" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="체크아웃&lt;br&gt;(체육관 밖)" vertex="1">
+          <mxGeometry height="50" width="140" x="40" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="us_REST" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="휴식" vertex="1">
+          <mxGeometry height="50" width="140" x="300" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="us_Q" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="매칭 대기&lt;br&gt;(큐에 있음)" vertex="1">
+          <mxGeometry height="50" width="140" x="620" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="us_M" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="매칭됨&lt;br&gt;(코트 대기)" vertex="1">
+          <mxGeometry height="50" width="140" x="620" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="us_P" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="게임 중" vertex="1">
+          <mxGeometry height="50" width="140" x="620" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="us_R" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="결과 입력 중" vertex="1">
+          <mxGeometry height="50" width="140" x="300" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="us_e0" edge="1" parent="1" source="us_init" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="us_OUT" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="us_e1" edge="1" parent="1" source="us_OUT" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="us_REST" value="체크인&lt;br&gt;[반경 안]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="us_e2" edge="1" parent="1" source="us_C" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.6;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="us_OUT" value="나가기 / 마지막 활동 후 90분&lt;br&gt;[게임 중 아님]">
+          <mxGeometry relative="1" x="0.2" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="354" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="us_e3" edge="1" parent="1" source="us_REST" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="us_Q" value="매칭 시작">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="us_e4" edge="1" parent="1" source="us_Q" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;" target="us_REST" value="매칭 취소">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="us_e5" edge="1" parent="1" source="us_Q" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" target="us_M" value="매칭 성사">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="us_e6" edge="1" parent="1" source="us_M" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.7;exitY=0;exitDx=0;exitDy=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;" target="us_Q" value="게임 해체&lt;br&gt;(코트 대기 중 참가자 이탈)">
+          <mxGeometry relative="1" x="-0.3846" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="us_e7" edge="1" parent="1" source="us_P" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.2;" target="us_REST" value="본인 불참 신고됨">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell><mxCell id="us_e11" value="게임 폐기&lt;br&gt;(다른 참가자 불참 신고)" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="us_P" target="us_Q"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="840" y="455"/><mxPoint x="840" y="135"/></Array></mxGeometry></mxCell>
+        <mxCell id="us_e8" edge="1" parent="1" source="us_M" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="us_P" value="코트 배정&lt;br&gt;(바로 게임 시작)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="us_e9" edge="1" parent="1" source="us_P" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="us_R" value="게임 종료&lt;br&gt;(누군가 첫 점수 제출)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="us_e10" edge="1" parent="1" source="us_R" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="us_REST" value="점수 제출&lt;br&gt;/ 첫 점수 제출 후 10분 경과">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="us_N" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=11;fontColor=#555555;" value="※ 게임 중에는 '나가기' 버튼을 비활성화&lt;br&gt;※ 마지막 활동 = 체크인 / 매칭 시작 / 게임 시작 중 가장 최근 시각&lt;br&gt;※ 매칭됨 상태에서 체크아웃하면 → 게임 해체, 나머지 3명은 매칭 대기로 복귀 (게임 상태 참고)&lt;br&gt;※ 점수를 낸 본인은 '결과 입력 중'을 바로 지나 휴식으로 이동&lt;br&gt;※ '결과 입력 중'에는 매칭 시작 불가 → 다음 게임을 하려면 먼저 점수를 제출해야 함 (점수 제출 = 게임 종료 신호)&lt;br&gt;※ 첫 점수 제출 후 10분이 지나면, 점수를 안 낸 사람도 휴식으로 풀려나 다시 매칭 가능&lt;br&gt;※ 불참 신고는 게임 시작(코트 배정) 후 3~10분 사이에만 가능" vertex="1">
+          <mxGeometry height="70" width="900" x="40" y="580" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="게임 상태" id="gm">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1000" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gm_init" parent="1" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_CW" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="빈 코트 대기" vertex="1">
+          <mxGeometry height="50" width="150" x="120" y="110" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="gm_IP" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="진행 중" vertex="1">
+          <mxGeometry height="50" width="150" x="640" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_SC" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="점수 입력 대기&lt;br&gt;(첫 제출 후 10분)" vertex="1">
+          <mxGeometry height="50" width="150" x="700" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_DS" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="불일치 수정 대기&lt;br&gt;(10분)" vertex="1">
+          <mxGeometry height="50" width="150" x="640" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_OK" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="확정&lt;br&gt;(MMR 반영)" vertex="1">
+          <mxGeometry height="50" width="150" x="310" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_VD" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="무효&lt;br&gt;(기록 반영 안 함)" vertex="1">
+          <mxGeometry height="50" width="150" x="380" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_CX" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="해체&lt;br&gt;(남은 참가자는 매칭 대기로)" vertex="1">
+          <mxGeometry height="50" width="170" x="110" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_f1" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="370" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_f2" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="300" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_f3" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="180" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_e0" edge="1" parent="1" source="gm_init" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="gm_CW" value="매칭 성사&lt;br&gt;(4명)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        
+        
+        <mxCell id="gm_e4" edge="1" parent="1" source="gm_CW" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gm_CX" value="참가자 이탈">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell><mxCell id="gm_e15" value="빈 코트 배정&lt;br&gt;(바로 게임 시작)" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gm_CW" target="gm_IP"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="gm_e16" value="불참 신고 [시작 후 3~10분]" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.1;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="gm_IP" target="gm_CX"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell>
+        
+        <mxCell id="gm_e6" edge="1" parent="1" source="gm_IP" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gm_SC" value="첫 점수 제출&lt;br&gt;(코트 반납)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_e7" edge="1" parent="1" source="gm_IP" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="gm_VD" value="점수 제출 없이 40분 초과&lt;br&gt;/ 4명 모두 체크아웃 (코트 반납)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="135" />
+              <mxPoint x="880" y="610" />
+              <mxPoint x="455" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gm_e8" edge="1" parent="1" source="gm_SC" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="gm_OK" value="4명 모두 입력 &amp;amp; 일치&lt;br&gt;/ 10분 경과 &amp;amp;&amp;nbsp;&lt;div&gt;입력값 일치&amp;nbsp;&lt;/div&gt;&lt;div&gt;(1명만 입력해도 저장)&lt;/div&gt;">
+          <mxGeometry relative="1" x="-0.0909" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gm_e9" edge="1" parent="1" source="gm_SC" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gm_DS" value="입력값 불일치">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_e10" edge="1" parent="1" source="gm_DS" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" target="gm_OK" value="10분 내&lt;br&gt;모두 일치">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_e11" edge="1" parent="1" source="gm_DS" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="gm_VD" value="10분 경과">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_e12" edge="1" parent="1" source="gm_OK" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gm_f1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_e13" edge="1" parent="1" source="gm_VD" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="gm_f2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_e14" edge="1" parent="1" source="gm_CX" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gm_f3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_N" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=11;fontColor=#555555;" value="※ 다음 게임을 하려면 점수를 내야 하므로 보통 첫 점수 제출로 게임이 끝남. 아무도 안 내고 모두 집에 간 경우만 40분 초과 / 4명 모두 체크아웃으로 무효 처리하고 코트 반납&lt;br&gt;※ 불일치 판정 시점: 4명이 모두 입력했을 때, 또는 10분이 지났을 때&lt;br&gt;※ 코트가 배정되면 바로 게임 시작(시작 버튼 없음). 불참 신고가 들어오면 게임 폐기 → 코트 반납, 나머지는 다시 매칭 대기" vertex="1">
+          <mxGeometry height="60" width="900" x="40" y="640" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="코트 상태" id="ct">
+    <mxGraphModel dx="953" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="560" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ct_init" parent="1" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="30" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ct_E" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="비어 있음" vertex="1">
+          <mxGeometry height="50" width="150" x="100" y="200" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="ct_U" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;strokeWidth=2;" value="사용 중" vertex="1">
+          <mxGeometry height="50" width="150" x="700" y="200" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="ct_e0" edge="1" parent="1" source="ct_init" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ct_E" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        
+        
+        <mxCell id="ct_e4" edge="1" parent="1" source="ct_U" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="ct_E" value="게임 종료 (첫 점수 제출) / 불참 신고로 폐기 / 40분 초과 / 4명 모두 체크아웃">
+          <mxGeometry relative="1" x="0.1" as="geometry" />
+        </mxCell><mxCell id="ct_e10" value="게임 배정 (바로 게임 시작)" style="html=1;endArrow=open;endSize=10;fontSize=11;labelBackgroundColor=default;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ct_E" target="ct_U"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="175" y="120"/><mxPoint x="775" y="120"/></Array></mxGeometry></mxCell>
+        
+        
+        
+        
+        
+        <mxCell id="ct_N" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=11;fontColor=#555555;" value="※ 코트 상태는 사람이 바꾸지 않고, 게임 상태에 따라 서버가 자동으로 바꿈" vertex="1">
+          <mxGeometry height="50" width="900" x="40" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
